@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Default Loan Prediction ML-App</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="loan_amnt" placeholder="Loan amount" required="required" />
+        <input type="text" name="funded_amnt" placeholder="Funded amount" required="required" />
+		<input type="text" name="funded_amnt_inv" placeholder="Funded amount investment" required="required" />
+		<input type="text" name="term" placeholder="Term" required="required" />
+		<input type="text" name="int_rate" placeholder="Int rate" required="required" />
+		<input type="text" name="installment" placeholder="Installment" required="required" />
+		<input type="text" name="grade" placeholder="Grade" required="required" />
+		<input type="text" name="sub_grade" placeholder="Sub grade" required="required" />
+		<input type="text" name="emp_title" placeholder="Employee title" required="required" />
+		<input type="text" name="emp_length" placeholder="Employee lenght" required="required" />
+		<input type="text" name="home_ownership" placeholder="Home ownership" required="required" />
+		<input type="text" name="annual_inc" placeholder="Annual income" required="required" />
+		<input type="text" name="verification_status" placeholder="verification_status" required="required" />
+		<input type="text" name="issue_d" placeholder="Issue date" required="required" />
+		<input type="text" name="desc" placeholder="Description" required="required" />
+		<input type="text" name="purpose" placeholder="Purpose" required="required" />
+		<input type="text" name="title" placeholder="Title" required="required" />
+		<input type="text" name="zip_code" placeholder="Zip code" required="required" />
+		<input type="text" name="addr_state" placeholder="Address state" required="required" />
+		<input type="text" name="dti" placeholder="DTI" required="required" />
+		<input type="text" name="delinq_2yrs" placeholder="Delinq of 2 years" required="required" />
+		<input type="text" name="earliest_cr_line" placeholder="Earliest CR Line" required="required" />
+		<input type="text" name="inq_last_6mths" placeholder="Inq of last 6 months" required="required" />
+		<input type="text" name="open_acc" placeholder="Open account" required="required" />
+		<input type="text" name="pub_rec" placeholder="Public record" required="required" />
+		<input type="text" name="revol_bal" placeholder="Revol Bal" required="required" />
+		<input type="text" name="revol_util" placeholder="Revol Util" required="required" />
+		<input type="text" name="total_acc" placeholder="Total account" required="required" />
+		<input type="text" name="total_pymnt" placeholder="Total payment" required="required" />
+		<input type="text" name="total_pymnt_inv" placeholder="Total payment investment" required="required" />
+		<input type="text" name="total_rec_prncp" placeholder="Total recovery prncpl" required="required" />
+		<input type="text" name="total_rec_int" placeholder="Total recovery int" required="required" />
+		<input type="text" name="total_rec_late_fee" placeholder="Total rec late fee" required="required" />
+		<input type="text" name="recoveries" placeholder="Recoveries" required="required" />
+		<input type="text" name="collection_recovery_fee" placeholder="Collection recovery fee" required="required" />
+		<input type="text" name="last_pymnt_d" placeholder="Last payment date" required="required" />
+		<input type="text" name="last_pymnt_amnt" placeholder="Last payment amnt" required="required" />
+		<input type="text" name="last_credit_pull_d" placeholder="Last credit pull date" required="required" />
+		<input type="text" name="acc_now_delinq" placeholder="Account now delinq" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
